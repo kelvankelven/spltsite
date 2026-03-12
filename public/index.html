@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLSX/CSV File Splitter - 200MB+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Massive File Splitter</h1>
+        <p>Upload XLSX/CSV (100-200MB+) and split into custom parts</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <p>Drag & drop or <label for="fileInput" class="file-label">click to browse</label></p>
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden>
+            <input type="number" id="partsInput" placeholder="Number of parts (default: 10)" min="1" max="100" value="10">
+            <button onclick="uploadFile()" class="upload-btn">Split File</button>
+        </div>
+
+        <div id="progress" class="progress" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span id="progressText">Processing...</span>
+        </div>
+
+        <div id="results" style="display: none;">
+            <h3>✅ Split Complete!</h3>
+            <div id="filesList"></div>
+            <button onclick="clearFiles()" class="clear-btn">Clear All Files</button>
+        </div>
+
+        <div id="filesSection">
+            <h3>📂 Current Files:</h3>
+            <div id="currentFiles"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
